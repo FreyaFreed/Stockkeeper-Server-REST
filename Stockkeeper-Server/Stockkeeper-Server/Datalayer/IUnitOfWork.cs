@@ -8,5 +8,7 @@ namespace Stockkeeper_Server.Datalayer
         IRepository<Chest> ChestRepository { get; }
         IRepository<Stack> StackRepository { get; }
         IRepository<ErrorLog> ErrorLogRepository { get; }
+        IRepository<ErrorReport> ErrorReportRepository { get; }
+        IRepository<Item> ItemRepository { get; }
     }
 }

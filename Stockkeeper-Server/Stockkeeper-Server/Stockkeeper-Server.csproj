@@ -243,8 +243,11 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChestController.cs" />
+    <Compile Include="Controllers\CountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FindController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Core\StockkeeperExceptionFilter.cs" />
     <Compile Include="Datalayer\BaseRepository.cs" />
     <Compile Include="Datalayer\Context\StockkeeperContext.cs" />
     <Compile Include="Datalayer\IRepository.cs" />
@@ -253,6 +256,8 @@
     <Compile Include="Datalayer\Model\Chest.cs" />
     <Compile Include="Datalayer\Model\Container.cs" />
     <Compile Include="Datalayer\Model\ErrorLog.cs" />
+    <Compile Include="Datalayer\Model\ErrorReport.cs" />
+    <Compile Include="Datalayer\Model\FindClosest.cs" />
     <Compile Include="Datalayer\Model\Item.cs" />
     <Compile Include="Datalayer\Model\Stack.cs" />
     <Compile Include="Datalayer\Model\World.cs" />
@@ -264,10 +269,6 @@
     <Compile Include="Migrations\201706142209254_Initial.Designer.cs">
       <DependentUpon>201706142209254_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706142300281_ErrorHandling.cs" />
-    <Compile Include="Migrations\201706142300281_ErrorHandling.Designer.cs">
-      <DependentUpon>201706142300281_ErrorHandling.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -276,7 +277,12 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\ChestService.cs" />
+    <Compile Include="Service\CountService.cs" />
+    <Compile Include="Service\ErrorService.cs" />
+    <Compile Include="Service\FindService.cs" />
     <Compile Include="Service\IChestService.cs" />
+    <Compile Include="Service\ICountService.cs" />
+    <Compile Include="Service\IFindService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -353,9 +359,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706142209254_Initial.resx">
       <DependentUpon>201706142209254_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706142300281_ErrorHandling.resx">
-      <DependentUpon>201706142300281_ErrorHandling.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

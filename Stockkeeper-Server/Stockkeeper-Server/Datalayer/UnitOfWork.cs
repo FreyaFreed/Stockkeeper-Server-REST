@@ -32,6 +32,18 @@ namespace Stockkeeper_Server.Datalayer
             }
         }
 
+        private IRepository<ErrorReport> _errorReportRepository;
+
+        public IRepository<ErrorReport> ErrorReportRepository
+        {
+            get
+            {
+                if (_errorReportRepository == null) _errorReportRepository = new BaseRepository<ErrorReport>(_context);
+
+                return _errorReportRepository;
+            }
+        }
+
         private IRepository<Chest> _chestRepository;
 
         public IRepository<Chest> ChestRepository
@@ -53,6 +65,18 @@ namespace Stockkeeper_Server.Datalayer
                 if (_stackRepository == null) _stackRepository = new BaseRepository<Stack>(_context);
 
                 return _stackRepository;
+            }
+        }
+
+        private IRepository<Item> _itemRepository;
+
+        public IRepository<Item> ItemRepository
+        {
+            get
+            {
+                if (_itemRepository == null) _itemRepository = new BaseRepository<Item>(_context);
+
+                return _itemRepository;
             }
         }
 

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Stockkeeper_Server.Datalayer.Model
 {
@@ -18,6 +19,7 @@ namespace Stockkeeper_Server.Datalayer.Model
        
         public int Z { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Stack> Stacks { get; set; }
 
         public override bool Equals(object obj)
@@ -35,15 +37,15 @@ namespace Stockkeeper_Server.Datalayer.Model
             return X.GetHashCode() + Y.GetHashCode() + Z.GetHashCode();
         }
 
-        public static bool operator ==(Container left, Container right)
-        {
-            return left.Equals(right);
-        }
+        //public static bool operator ==(Container left, Container right)
+        //{
+        //    return left.Equals(right);
+        //}
 
-        public static bool operator !=(Container left, Container right)
-        {
-            return !left.Equals(right);
-        }
+        //public static bool operator !=(Container left, Container right)
+        //{
+        //    return !left.Equals(right);
+        //}
 
         public void generateId()
         {

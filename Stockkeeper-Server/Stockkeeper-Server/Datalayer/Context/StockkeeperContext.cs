@@ -14,8 +14,7 @@ namespace Stockkeeper_Server.Datalayer.Context
         public DbSet<Item> Items { get; set; }
         public DbSet<Stack> Stacks { get; set; }
         public DbSet<ErrorLog> ErrorLogs { get; set; }
-
-
+        public DbSet<ErrorReport> ErrorReports { get; set; }
 
 
     }
