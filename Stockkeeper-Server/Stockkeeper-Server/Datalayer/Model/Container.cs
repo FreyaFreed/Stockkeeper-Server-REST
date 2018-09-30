@@ -19,7 +19,7 @@ namespace Stockkeeper_Server.Datalayer.Model
        
         public int Z { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<Stack> Stacks { get; set; }
 
         public override bool Equals(object obj)
